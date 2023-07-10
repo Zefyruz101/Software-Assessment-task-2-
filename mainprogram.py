@@ -65,9 +65,15 @@ clear_button.pack()
 my_menu = Menu(root)
 root.config(menu=my_menu)
 
-file_menu = Menu(my_menu)
+file_menu = Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label="File", menu=file_menu)
 file_menu.add_command(label="Exit", command=root.destroy)
+
+#Options buttons
+options_menu = Menu(my_menu, tearoff=False)
+my_menu.add_cascade(label="Options", menu=options_menu)
+options_menu.add_command(Label='Night Mode On')
+options_menu.add_command(Label='Night Mode Off')
 
 #Loops the program
 root.mainloop()
