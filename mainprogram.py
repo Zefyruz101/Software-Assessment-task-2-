@@ -1,5 +1,13 @@
 from tkinter import *
 
+#Main Window
+root = Tk()
+root.title("Summing Series")
+
+#Text specification
+my_text = Text(root, font=('arial', 14))
+
+#Calculate Arithmetic and Geometric Series
 def calculate_sum():
     first_term = float(first_term_entry.get())
     common_difference = float(common_difference_entry.get())
@@ -14,17 +22,28 @@ def calculate_sum():
     
     sum_label.config(text="Sum: " + str(sum_series))
 
-
+#Clear All Text
 def clear():
     first_term_entry.delete(0,END)
     common_difference_entry.delete(0,END)
     num_terms_entry.delete(0,END)
     sum_label.config(text="Sum: ")
 
+#Turn On Night Mode
+def night_on():
+    main_colour = 'Black'
+    second_colour = 'Grey'
+    text_colour = 'White'
 
-#Main Window
-root = Tk()
-root.title("Summing Series")
+    root.config(bg=main_colour)
+    my_text.config(fg=text_colour)
+    first_term_entry.config(bg=second_colour)
+
+
+
+#Turn Off Night Mode
+def night_off():
+
 
 #Labels and Entry Widgets
 first_term_label = Label(root, text="First Term: ")
@@ -65,15 +84,15 @@ clear_button.pack()
 my_menu = Menu(root)
 root.config(menu=my_menu)
 
-file_menu = Menu(my_menu, tearoff=False)
+file_menu = Menu(my_menu)
 my_menu.add_cascade(label="File", menu=file_menu)
 file_menu.add_command(label="Exit", command=root.destroy)
 
 #Options buttons
-options_menu = Menu(my_menu, tearoff=False)
+options_menu = Menu(my_menu)
 my_menu.add_cascade(label="Options", menu=options_menu)
-options_menu.add_command(label='Night Mode On')
-options_menu.add_command(label='Night Mode Off')
+options_menu.add_command(label='Night Mode On', command = night_on)
+options_menu.add_command(label='Night Mode Off',command = night_off)
 
 #Loops the program
 root.mainloop()
