@@ -15,7 +15,6 @@ def calculate_sum():
     sum_label.config(text="Sum: " + str(sum_series))
 
 
-
 def clear():
     first_term_entry.delete(0,END)
     common_difference_entry.delete(0,END)
@@ -61,6 +60,13 @@ calculate_button.pack()
 
 clear_button = Button(root, text="Clear", command=clear)
 clear_button.pack()
+
+#File buttons
+my_menu = Menu(root)
+root.config(menu=my_menu)
+
+file_menu = Menu(my_menu)
+file_menu.add_command(label="Exit", command=root.destroy)
 
 #Loops the program
 root.mainloop()
