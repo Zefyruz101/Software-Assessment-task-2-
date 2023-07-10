@@ -72,8 +72,8 @@ file_menu.add_command(label="Exit", command=root.destroy)
 #Options buttons
 options_menu = Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label="Options", menu=options_menu)
-options_menu.add_command(Label='Night Mode On')
-options_menu.add_command(Label='Night Mode Off')
+options_menu.add_command(label='Night Mode On')
+options_menu.add_command(label='Night Mode Off')
 
 #Loops the program
 root.mainloop()
