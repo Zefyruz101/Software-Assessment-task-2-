@@ -11,18 +11,18 @@ root = Tk()
 root.title("Summing Series")
 
 #Labels and Entry Widgets
-first_term = Label(root, text="First Term: ")
-first_term.pack()
+first_term_label = Label(root, text="First Term: ")
+first_term_label.pack()
 first_term_entry = Entry(root)
 first_term_entry.pack()
 
-common_difference = Label(root, text="Common Difference/Ratio:")
-common_difference.pack()
+common_difference_label = Label(root, text="Common Difference/Ratio:")
+common_difference_label.pack()
 common_difference_entry = Entry(root)
 common_difference_entry.pack()
 
-num_terms = Label(root, text="Number of Terms:")
-num_terms.pack()
+num_terms_label = Label(root, text="Number of Terms:")
+num_terms_label.pack()
 num_terms_entry = Entry(root)
 num_terms_entry.pack()
 
