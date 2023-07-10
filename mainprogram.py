@@ -45,8 +45,8 @@ def night_off():
     common_difference_label.config(bg=main_colour, fg=text_colour)
     num_terms_label.config(bg=main_colour, fg=text_colour)
 
-    arithmetic_button.config(bg=main_colour, fg=text_colour)
-    geometric_button.config(bg=main_colour, fg=text_colour)
+    arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor='White')
+    geometric_button.config(bg=main_colour, fg=text_colour, selectcolor='White')
 
     sum_label.config(bg=main_colour, fg=text_colour)
     calculate_button.config(bg=main_colour, fg=text_colour)
@@ -68,8 +68,8 @@ def night_on():
     common_difference_label.config(bg=main_colour, fg=text_colour)
     num_terms_label.config(bg=main_colour, fg=text_colour)
 
-    arithmetic_button.config(bg=main_colour, fg=text_colour)
-    geometric_button.config(bg=main_colour, fg=text_colour)
+    arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor='Black')
+    geometric_button.config(bg=main_colour, fg=text_colour, selectcolor='Black')
 
     sum_label.config(bg=main_colour, fg=text_colour)
     calculate_button.config(bg=main_colour, fg=text_colour)
