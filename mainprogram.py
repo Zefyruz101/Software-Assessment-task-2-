@@ -1,13 +1,26 @@
 from tkinter import *
 
 def calculate_sum():
-    pass
+    first_term = float(first_term_entry.get())
+    common_difference = float(common_difference_entry.get())
+    num_terms = int(num_terms_entry.get())
+
+    if var.get() == 1: 
+        #arithmetic series calculations
+        sum_series = (num_terms/2) * (2 * first_term + (num_terms - 1) * common_difference)
+    else:
+        #geometric series calculations
+        sum_series = (first_term*(1-common_difference**num_terms) / (1-common_difference))
+    
+    sum_label.config(text="Sum: " + str(sum_series))
+
+
 
 def clear():
     first_term_entry.delete(0,END)
     common_difference_entry.delete(0,END)
     num_terms_entry.delete(0,END)
-    sum_label.config(text='Sum')
+    sum_label.config(text="Sum: ")
 
 
 #Main Window
@@ -49,5 +62,5 @@ calculate_button.pack()
 clear_button = Button(root, text="Clear", command=clear)
 clear_button.pack()
 
-
+#Loops the program
 root.mainloop()
