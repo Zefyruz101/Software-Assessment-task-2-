@@ -1,2 +1,2 @@
-from tkinter
-print("HI")
+from tkinter import *
+test
