@@ -76,7 +76,7 @@ def night_on():
     clear_button.config(bg=main_colour, fg=text_colour)
 
 #Defining other themes
-def brown(): #A0816C
+def brown(): 
     main_colour = "#F5F5DC"
     second_colour = "#D5BA99"
     text_colour = "#8B4411"
