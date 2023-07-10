@@ -29,6 +29,29 @@ def clear():
     num_terms_entry.delete(0,END)
     sum_label.config(text="Sum: ")
 
+#Original Theme, turning off night mode
+def night_off():
+    main_colour = 'White'
+    second_colour = 'White'
+    text_colour = 'Black'
+
+    root.config(bg=main_colour)
+    my_text.config(fg=text_colour)
+    first_term_entry.config(fg=text_colour, bg=second_colour, insertbackground="black")
+    common_difference_entry.config(fg=text_colour, bg=second_colour, insertbackground="black")
+    num_terms_entry.config(fg=text_colour, bg=second_colour, insertbackground="black")
+
+    first_term_label.config(bg=main_colour, fg=text_colour)
+    common_difference_label.config(bg=main_colour, fg=text_colour)
+    num_terms_label.config(bg=main_colour, fg=text_colour)
+
+    arithmetic_button.config(bg=main_colour, fg=text_colour)
+    geometric_button.config(bg=main_colour, fg=text_colour)
+
+    sum_label.config(bg=main_colour, fg=text_colour)
+    calculate_button.config(bg=main_colour, fg=text_colour)
+    clear_button.config(bg=main_colour, fg=text_colour)
+
 #Turn On Night Mode
 def night_on():
     main_colour = 'Black'
@@ -52,20 +75,17 @@ def night_on():
     calculate_button.config(bg=main_colour, fg=text_colour)
     clear_button.config(bg=main_colour, fg=text_colour)
 
-
-
-
-#Turn Off Night Mode
-def night_off():
-    main_colour = 'White'
-    second_colour = 'White'
-    text_colour = 'Black'
-
+#Defining other themes
+def brown(): #A0816C
+    main_colour = "#F5F5DC"
+    second_colour = "#D5BA99"
+    text_colour = "#8B4411"
+    
     root.config(bg=main_colour)
     my_text.config(fg=text_colour)
-    first_term_entry.config(bg=second_colour)
-    common_difference_entry.config(bg=second_colour)
-    num_terms_entry.config(bg=second_colour)
+    first_term_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    common_difference_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    num_terms_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
 
     first_term_label.config(bg=main_colour, fg=text_colour)
     common_difference_label.config(bg=main_colour, fg=text_colour)
@@ -125,8 +145,9 @@ file_menu.add_command(label="Exit", command=root.destroy)
 #Options buttons
 options_menu = Menu(my_menu)
 my_menu.add_cascade(label="Options", menu=options_menu)
-options_menu.add_command(label='Night Mode On', command = night_on)
-options_menu.add_command(label='Night Mode Off',command = night_off)
+options_menu.add_command(label='Original Theme',command = night_off)
+options_menu.add_command(label='Night Mode', command = night_on)
+options_menu.add_command(label="Beige", command = brown)
 
 #Loops the program
 root.mainloop()
