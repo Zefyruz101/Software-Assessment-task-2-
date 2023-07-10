@@ -4,7 +4,11 @@ def calculate_sum():
     pass
 
 def clear():
-    pass
+    first_term_entry.delete(0,END)
+    common_difference_entry.delete(0,END)
+    num_terms_entry.delete(0,END)
+    sum_label.config(text='Sum')
+
 
 #Main Window
 root = Tk()
