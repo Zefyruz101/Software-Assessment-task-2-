@@ -37,9 +37,9 @@ def night_on():
 
     root.config(bg=main_colour)
     my_text.config(fg=text_colour)
-    first_term_entry.config(bg=second_colour, insertbackground="white")
-    common_difference_entry.config(bg=second_colour, insertbackground="white")
-    num_terms_entry.config(bg=second_colour, insertbackground="white")
+    first_term_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    common_difference_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    num_terms_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
 
     first_term_label.config(bg=main_colour, fg=text_colour)
     common_difference_label.config(bg=main_colour, fg=text_colour)
