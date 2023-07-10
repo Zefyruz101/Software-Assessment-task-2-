@@ -38,11 +38,45 @@ def night_on():
     root.config(bg=main_colour)
     my_text.config(fg=text_colour)
     first_term_entry.config(bg=second_colour)
+    common_difference_entry.config(bg=second_colour)
+    num_terms_entry.config(bg=second_colour)
+
+    first_term_label.config(bg=main_colour, fg=text_colour)
+    common_difference_label.config(bg=main_colour, fg=text_colour)
+    num_terms_label.config(bg=main_colour, fg=text_colour)
+
+    arithmetic_button.config(bg=main_colour, fg=text_colour)
+    geometric_button.config(bg=main_colour, fg=text_colour)
+
+    sum_label.config(bg=main_colour, fg=text_colour)
+    calculate_button.config(bg=main_colour, fg=text_colour)
+    clear_button.config(bg=main_colour, fg=text_colour)
+
 
 
 
 #Turn Off Night Mode
 def night_off():
+    main_colour = 'White'
+    second_colour = 'White'
+    text_colour = 'Black'
+
+    root.config(bg=main_colour)
+    my_text.config(fg=text_colour)
+    first_term_entry.config(bg=second_colour)
+    common_difference_entry.config(bg=second_colour)
+    num_terms_entry.config(bg=second_colour)
+
+    first_term_label.config(bg=main_colour, fg=text_colour)
+    common_difference_label.config(bg=main_colour, fg=text_colour)
+    num_terms_label.config(bg=main_colour, fg=text_colour)
+
+    arithmetic_button.config(bg=main_colour, fg=text_colour)
+    geometric_button.config(bg=main_colour, fg=text_colour)
+
+    sum_label.config(bg=main_colour, fg=text_colour)
+    calculate_button.config(bg=main_colour, fg=text_colour)
+    clear_button.config(bg=main_colour, fg=text_colour)
 
 
 #Labels and Entry Widgets
