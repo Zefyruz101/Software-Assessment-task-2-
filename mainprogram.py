@@ -3,6 +3,7 @@ from tkinter import *
 #Main Window
 root = Tk()
 root.title("Summing Series")
+root.geometry("500x400")
 
 #Text specification
 my_text = Text(root, font=('arial', 14))
@@ -22,7 +23,7 @@ def calculate_sum():
     
     sum_label.config(text="Sum: " + str(sum_series))
 
-#Clear All Text
+#Clear All Text in Entry Fields
 def clear():
     first_term_entry.delete(0,END)
     common_difference_entry.delete(0,END)
@@ -31,7 +32,7 @@ def clear():
 
 #Original Theme, turning off night mode
 def night_off():
-    main_colour = 'White'
+    main_colour = '#f0f0f0'
     second_colour = 'White'
     text_colour = 'Black'
 
@@ -76,7 +77,7 @@ def night_on():
     clear_button.config(bg=main_colour, fg=text_colour)
 
 #Defining other themes
-def brown(): 
+def beige(): 
     main_colour = "#F5F5DC"
     second_colour = "#D5BA99"
     text_colour = "#8B4411"
@@ -91,8 +92,8 @@ def brown():
     common_difference_label.config(bg=main_colour, fg=text_colour)
     num_terms_label.config(bg=main_colour, fg=text_colour)
 
-    arithmetic_button.config(bg=main_colour, fg=text_colour)
-    geometric_button.config(bg=main_colour, fg=text_colour)
+    arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
+    geometric_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
 
     sum_label.config(bg=main_colour, fg=text_colour)
     calculate_button.config(bg=main_colour, fg=text_colour)
@@ -147,7 +148,7 @@ options_menu = Menu(my_menu)
 my_menu.add_cascade(label="Options", menu=options_menu)
 options_menu.add_command(label='Original Theme',command = night_off)
 options_menu.add_command(label='Night Mode', command = night_on)
-options_menu.add_command(label="Beige", command = brown)
+options_menu.add_command(label="Beige", command = beige)
 
 #Loops the program
 root.mainloop()
