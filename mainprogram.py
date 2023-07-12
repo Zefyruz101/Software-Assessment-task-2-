@@ -102,38 +102,38 @@ def beige():
 
 #Labels and Entry Widgets
 first_term_label = Label(root, text="First Term: ")
-first_term_label.pack()
+first_term_label.place(x=150, y=75)
 first_term_entry = Entry(root)
-first_term_entry.pack()
+first_term_entry.place(x=220, y=75, width=150, height=20)
 
 common_difference_label = Label(root, text="Common Difference/Ratio:")
-common_difference_label.pack()
+common_difference_label.place(x=65, y=100) 
 common_difference_entry = Entry(root)
-common_difference_entry.pack()
+common_difference_entry.place(x=220, y=100, width=150, height=20)
 
 num_terms_label = Label(root, text="Number of Terms:")
-num_terms_label.pack()
+num_terms_label.place(x=110, y=125)
 num_terms_entry = Entry(root)
-num_terms_entry.pack()
+num_terms_entry.place(x=220, y=125, width=150, height=20)
 
 #Radio Buttons
 var = IntVar()
 arithmetic_button = Radiobutton(root, variable=var, value=1, text="Arithmetic Series")
-arithmetic_button.pack()
+arithmetic_button.place(x=100, y=170)
 
 geometric_button = Radiobutton(root, variable=var, value=2, text="Geometric Series")
-geometric_button.pack()
+geometric_button.place(x=100, y=190)
 
 #Output Widgets
 sum_label = Label(root, text = "Sum: ")
-sum_label.pack()
+sum_label.place(x=230, y=200)
 
 #Calculate and Clear Buttons
 calculate_button = Button(root, text="Calculate", command=calculate_sum)
-calculate_button.pack()
+calculate_button.place(x=275, y=160)
 
 clear_button = Button(root, text="Clear", command=clear)
-clear_button.pack()
+clear_button.place(x=230, y=160)
 
 #File buttons
 my_menu = Menu(root)
