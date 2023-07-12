@@ -10,18 +10,30 @@ my_text = Text(root, font=('arial', 14))
 
 #Calculate Arithmetic and Geometric Series
 def calculate_sum():
-    first_term = float(first_term_entry.get())
-    common_difference = float(common_difference_entry.get())
-    num_terms = int(num_terms_entry.get())
+    try:
+        first_term = float(first_term_entry.get())
+        common_difference = float(common_difference_entry.get())
+        num_terms = int(num_terms_entry.get())
 
-    if var.get() == 1: 
-        #arithmetic series calculations
-        sum_series = (num_terms/2) * (2 * first_term + (num_terms - 1) * common_difference)
-    else:
-        #geometric series calculations
-        sum_series = (first_term*(1-common_difference**num_terms) / (1-common_difference))
+        if var.get() == 1: 
+            #arithmetic series calculations
+            sum_series = (num_terms/2) * (2 * first_term + (num_terms - 1) * common_difference)
+        else:
+            #geometric series calculations
+            sum_series = (first_term*(1-common_difference**num_terms) / (1-common_difference))
     
-    sum_label.config(text="Sum: " + str(sum_series))
+        sum_label.config(text="Sum: " + str(sum_series))
+
+    except ValueError:
+        show_error("Invalid input! Please enter a valid number")
+
+def show_error(message=""):
+    error_label.config(text=message)
+
+    if message:
+        root.after(3000, show_error)
+
+    
 
 #Clear All Text in Entry Fields
 def clear():
@@ -105,6 +117,9 @@ first_term_label = Label(root, text="First Term: ")
 first_term_label.place(x=150, y=75)
 first_term_entry = Entry(root)
 first_term_entry.place(x=220, y=75, width=150, height=20)
+
+error_label = Label(root, text="")
+error_label.place(x=200, y=250)
 
 common_difference_label = Label(root, text="Common Difference/Ratio:")
 common_difference_label.place(x=65, y=100) 
