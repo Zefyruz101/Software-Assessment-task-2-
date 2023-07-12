@@ -114,10 +114,10 @@ def beige():
     calculate_button.config(bg=main_colour, fg=text_colour)
     clear_button.config(bg=main_colour, fg=text_colour)
 
-def beige(): 
-    main_colour = "#F5F5DC"
-    second_colour = "#D5BA99"
-    text_colour = "#8B4411"
+def retro_beige(): 
+    main_colour = "#eeebe2"
+    second_colour = "#d0c9ae"
+    text_colour = "#9b9994"
     
     root.config(bg=main_colour)
     my_text.config(fg=text_colour)
@@ -137,6 +137,28 @@ def beige():
     calculate_button.config(bg=main_colour, fg=text_colour)
     clear_button.config(bg=main_colour, fg=text_colour)
 
+def aether():
+    main_colour = "#101820"
+    second_colour = "#452e54"
+    text_colour = "#cf6bdd"
+    
+    root.config(bg=main_colour)
+    my_text.config(fg=text_colour)
+    first_term_entry.config(fg=second_colour, bg=main_colour, insertbackground="white")
+    common_difference_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    num_terms_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+
+    first_term_label.config(bg=main_colour, fg=text_colour)
+    common_difference_label.config(bg=main_colour, fg=text_colour)
+    num_terms_label.config(bg=main_colour, fg=text_colour)
+    error_label.config(bg=main_colour, fg=text_colour)
+
+    arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
+    geometric_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
+
+    sum_label.config(bg=main_colour, fg=text_colour)
+    calculate_button.config(bg=main_colour, fg=text_colour)
+    clear_button.config(bg=main_colour, fg=text_colour)
 
 #Labels and Entry Widgets
 first_term_label = Label(root, text="First Term: ")
@@ -190,6 +212,8 @@ my_menu.add_cascade(label="Options", menu=options_menu)
 options_menu.add_command(label='Original Theme',command = night_off)
 options_menu.add_command(label='Night Mode', command = night_on)
 options_menu.add_command(label="Beige", command = beige)
+options_menu.add_command(label="Retro Beige", command = retro_beige)
+options_menu.add_command(label="Aether", command=aether)
 
 #Loops the program
 root.mainloop()
