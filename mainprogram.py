@@ -57,6 +57,7 @@ def night_off():
     first_term_label.config(bg=main_colour, fg=text_colour)
     common_difference_label.config(bg=main_colour, fg=text_colour)
     num_terms_label.config(bg=main_colour, fg=text_colour)
+    error_label.config(bg=main_colour, fg=text_colour)
 
     arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor='White')
     geometric_button.config(bg=main_colour, fg=text_colour, selectcolor='White')
@@ -80,6 +81,7 @@ def night_on():
     first_term_label.config(bg=main_colour, fg=text_colour)
     common_difference_label.config(bg=main_colour, fg=text_colour)
     num_terms_label.config(bg=main_colour, fg=text_colour)
+    error_label.config(bg=main_colour, fg=text_colour )
 
     arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor='Black')
     geometric_button.config(bg=main_colour, fg=text_colour, selectcolor='Black')
@@ -103,6 +105,30 @@ def beige():
     first_term_label.config(bg=main_colour, fg=text_colour)
     common_difference_label.config(bg=main_colour, fg=text_colour)
     num_terms_label.config(bg=main_colour, fg=text_colour)
+    error_label.config(bg=main_colour, fg=text_colour)
+
+    arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
+    geometric_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
+
+    sum_label.config(bg=main_colour, fg=text_colour)
+    calculate_button.config(bg=main_colour, fg=text_colour)
+    clear_button.config(bg=main_colour, fg=text_colour)
+
+def beige(): 
+    main_colour = "#F5F5DC"
+    second_colour = "#D5BA99"
+    text_colour = "#8B4411"
+    
+    root.config(bg=main_colour)
+    my_text.config(fg=text_colour)
+    first_term_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    common_difference_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    num_terms_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+
+    first_term_label.config(bg=main_colour, fg=text_colour)
+    common_difference_label.config(bg=main_colour, fg=text_colour)
+    num_terms_label.config(bg=main_colour, fg=text_colour)
+    error_label.config(bg=main_colour, fg=text_colour)
 
     arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
     geometric_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
