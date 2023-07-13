@@ -144,7 +144,7 @@ def aether():
     
     root.config(bg=main_colour)
     my_text.config(fg=text_colour)
-    first_term_entry.config(fg=second_colour, bg=main_colour, insertbackground="white")
+    first_term_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
     common_difference_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
     num_terms_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
 
