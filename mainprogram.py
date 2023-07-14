@@ -166,7 +166,7 @@ def aether():
 def blueberry_light():
     main_colour = "#dae0f5"
     second_colour = "#8fa4b8"
-    text_colour = "#a5a2b0"
+    text_colour = "#6a618a"
     
     root.config(bg=main_colour)
     my_text.config(fg=text_colour)
