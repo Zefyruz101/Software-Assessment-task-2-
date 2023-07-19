@@ -190,7 +190,7 @@ def blueberry_light():
 def lavender():
     main_colour = "#ada6c2"
     second_colour = "#423b5c"
-    text_colour = "#d0cddb"
+    text_colour = "#ffffff"
 
     root.config(bg=main_colour)
     my_text.config(fg=text_colour)
