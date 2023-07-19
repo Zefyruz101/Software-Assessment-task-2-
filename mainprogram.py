@@ -27,13 +27,12 @@ def calculate_sum():
     except ValueError:
         show_error("Invalid input! Please enter a valid number")
 
+#Calculating an error message if an invalid input is entered
 def show_error(message=""):
     error_label.config(text=message)
 
     if message:
         root.after(3000, show_error)
-
-    
 
 #Clear All Text in Entry Fields
 def clear():
@@ -91,6 +90,7 @@ def night_on():
     clear_button.config(bg=main_colour, fg=text_colour)
 
 #Defining other themes
+#Beige theme
 def beige(): 
     main_colour = "#F5F5DC"
     second_colour = "#D5BA99"
@@ -114,6 +114,7 @@ def beige():
     calculate_button.config(bg=main_colour, fg=text_colour)
     clear_button.config(bg=main_colour, fg=text_colour)
 
+#Retro Beige Theme
 def retro_beige(): 
     main_colour = "#eeebe2"
     second_colour = "#d0c9ae"
@@ -137,6 +138,7 @@ def retro_beige():
     calculate_button.config(bg=main_colour, fg=text_colour)
     clear_button.config(bg=main_colour, fg=text_colour)
 
+#Aether Theme (Purple-like theme)
 def aether():
     main_colour = "#101820"
     second_colour = "#452e54"
@@ -160,6 +162,55 @@ def aether():
     calculate_button.config(bg=main_colour, fg=text_colour)
     clear_button.config(bg=main_colour, fg=text_colour)
 
+#Blueberry Light Theme
+def blueberry_light():
+    main_colour = "#dae0f5"
+    second_colour = "#8fa4b8"
+    text_colour = "#6a618a"
+    
+    root.config(bg=main_colour)
+    my_text.config(fg=text_colour)
+    first_term_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    common_difference_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    num_terms_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+
+    first_term_label.config(bg=main_colour, fg=text_colour)
+    common_difference_label.config(bg=main_colour, fg=text_colour)
+    num_terms_label.config(bg=main_colour, fg=text_colour)
+    error_label.config(bg=main_colour, fg=text_colour)
+
+    arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
+    geometric_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
+
+    sum_label.config(bg=main_colour, fg=text_colour)
+    calculate_button.config(bg=main_colour, fg=text_colour)
+    clear_button.config(bg=main_colour, fg=text_colour)
+
+
+def lavender():
+    main_colour = "#ada6c2"
+    second_colour = "#423b5c"
+    text_colour = "#d0cddb"
+
+    root.config(bg=main_colour)
+    my_text.config(fg=text_colour)
+    first_term_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    common_difference_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+    num_terms_entry.config(fg=text_colour, bg=second_colour, insertbackground="white")
+
+    first_term_label.config(bg=main_colour, fg=text_colour)
+    common_difference_label.config(bg=main_colour, fg=text_colour)
+    num_terms_label.config(bg=main_colour, fg=text_colour)
+    error_label.config(bg=main_colour, fg=text_colour)
+
+    arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
+    geometric_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
+
+    sum_label.config(bg=main_colour, fg=text_colour)
+    calculate_button.config(bg=main_colour, fg=text_colour)
+    clear_button.config(bg=main_colour, fg=text_colour)
+
+    
 #Labels and Entry Widgets
 first_term_label = Label(root, text="First Term: ")
 first_term_label.place(x=150, y=75)
@@ -214,6 +265,8 @@ options_menu.add_command(label='Night Mode', command = night_on)
 options_menu.add_command(label="Beige", command = beige)
 options_menu.add_command(label="Retro Beige", command = retro_beige)
 options_menu.add_command(label="Aether", command=aether)
+options_menu.add_command(label="Blueberry Light", command=blueberry_light)
+options_menu.add_command(label="Lavender", command=lavender)
 
 #Loops the program
 root.mainloop()
