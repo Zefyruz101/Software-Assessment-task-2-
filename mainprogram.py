@@ -210,6 +210,10 @@ def lavender():
     calculate_button.config(bg=main_colour, fg=text_colour)
     clear_button.config(bg=main_colour, fg=text_colour)
 
+
+def jonathan():
+    pass
+
     
 #Labels and Entry Widgets
 first_term_label = Label(root, text="First Term: ")
@@ -267,6 +271,7 @@ options_menu.add_command(label="Retro Beige", command = retro_beige)
 options_menu.add_command(label="Aether", command=aether)
 options_menu.add_command(label="Blueberry Light", command=blueberry_light)
 options_menu.add_command(label="Lavender", command=lavender)
+options_menu.add_command(label="Jonathan", command=jonathan)
 
 #Loops the program
 root.mainloop()
