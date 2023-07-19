@@ -268,5 +268,9 @@ options_menu.add_command(label="Aether", command=aether)
 options_menu.add_command(label="Blueberry Light", command=blueberry_light)
 options_menu.add_command(label="Lavender", command=lavender)
 
+#Font buttons
+fonts_menu = Menu(my_menu)
+my_menu.add_cascade(label="Fonts", menu=options_menu)
+
 #Loops the program
 root.mainloop()
