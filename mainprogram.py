@@ -259,7 +259,7 @@ file_menu.add_command(label="Exit", command=root.destroy)
 
 #Options buttons
 options_menu = Menu(my_menu)
-my_menu.add_cascade(label="Options", menu=options_menu)
+my_menu.add_cascade(label="Themes", menu=options_menu)
 options_menu.add_command(label='Original Theme',command = night_off)
 options_menu.add_command(label='Night Mode', command = night_on)
 options_menu.add_command(label="Beige", command = beige)
