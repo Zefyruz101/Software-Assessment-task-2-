@@ -270,7 +270,7 @@ options_menu.add_command(label="Lavender", command=lavender)
 
 #Font buttons
 fonts_menu = Menu(my_menu)
-my_menu.add_cascade(label="Fonts", menu=options_menu)
+my_menu.add_cascade(label="Fonts", menu=fonts_menu)
 
 #Loops the program
 root.mainloop()
