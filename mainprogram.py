@@ -186,7 +186,7 @@ def blueberry_light():
     calculate_button.config(bg=main_colour, fg=text_colour)
     clear_button.config(bg=main_colour, fg=text_colour)
 
-
+#Lavender Theme
 def lavender():
     main_colour = "#ada6c2"
     second_colour = "#423b5c"
@@ -210,6 +210,23 @@ def lavender():
     calculate_button.config(bg=main_colour, fg=text_colour)
     clear_button.config(bg=main_colour, fg=text_colour)
 
+#Fonts
+def arial_font():
+    my_text = Text(root, font=('arial', 14))
+    
+
+def helvetica_font():
+    first_term_label.config(font=("helvetica", 9))
+    common_difference_label.config(font="helvetica")
+    num_terms_label.config(font="helvetica")
+    error_label.config(font="helvetica")
+
+    arithmetic_button.config(font="helvetica")
+    geometric_button.config(font="helvetica")
+
+    sum_label.config(font="helvetica")
+    calculate_button.config(font="helvetica")
+    clear_button.config(font="helvetica")
     
 #Labels and Entry Widgets
 first_term_label = Label(root, text="First Term: ")
@@ -271,6 +288,8 @@ options_menu.add_command(label="Lavender", command=lavender)
 #Font buttons
 fonts_menu = Menu(my_menu)
 my_menu.add_cascade(label="Fonts", menu=fonts_menu)
+fonts_menu.add_command(label="Arial", command=arial_font)
+fonts_menu.add_command(label="Helvetica", command=helvetica_font)
 
 #Loops the program
 root.mainloop()
