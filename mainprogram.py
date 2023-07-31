@@ -212,7 +212,7 @@ def lavender():
 
 #Fonts
 def arial_font():
-    my_text = Text(root, font=('arial', 14))
+    my_text.config(font=('arial', 14)) 
     
 
 def helvetica_font():
