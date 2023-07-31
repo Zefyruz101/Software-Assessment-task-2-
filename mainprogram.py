@@ -6,7 +6,7 @@ root.title("Summing Series")
 root.geometry("500x400")
 
 #Text specification
-my_text = Text(root, font=('arial', 14))
+my_text = Text(root)
 
 #Calculate Arithmetic and Geometric Series
 def calculate_sum():
@@ -212,21 +212,21 @@ def lavender():
 
 #Fonts
 def arial_font():
-    first_term_entry.config(font=("arial", 9))
-    common_difference_entry.config(font=("arial", 9))
-    num_terms_entry.config(font=("arial", 9))
+    first_term_entry.config(font=("Arial Narrow", 10))
+    common_difference_entry.config(font=("Arial Narrow", 10))
+    num_terms_entry.config(font=("Arial Narrow", 10))
 
-    first_term_label.config(font=("arial", 9))
-    common_difference_label.config(font=("arial", 9))
-    num_terms_label.config(font=("arial", 9))
-    error_label.config(font=("arial", 9))
+    first_term_label.config(font=("Arial Narrow", 10))
+    common_difference_label.config(font=("Arial Narrow", 10))
+    num_terms_label.config(font=("Arial Narrow", 10))
+    error_label.config(font=("Arial Narrow", 10))
 
-    arithmetic_button.config(font=("arial", 9))
-    geometric_button.config(font=("arial", 9))
+    arithmetic_button.config(font=("Arial Narrow", 10))
+    geometric_button.config(font=("Arial Narrow", 10))
 
-    sum_label.config(font=("arial", 9))
-    calculate_button.config(font=("arial", 9))
-    clear_button.config(font=("arial", 9))
+    sum_label.config(font=("Arial Narrow", 10))
+    calculate_button.config(font=("Arial Narrow", 10))
+    clear_button.config(font=("Arial Narrow", 10))
     
 
 def helvetica_font():
@@ -245,6 +245,24 @@ def helvetica_font():
     sum_label.config(font=("helvetica", 9))
     calculate_button.config(font=("helvetica", 9))
     clear_button.config(font=("helvetica", 9))
+
+def comicsans_font():
+    
+    first_term_entry.config(font=("Comic Sans MS", 9))
+    common_difference_entry.config(font=("Comic Sans MS", 9))
+    num_terms_entry.config(font=("Comic Sans MS", 9))
+
+    first_term_label.config(font=("Comic Sans MS", 9))
+    common_difference_label.config(font=("Comic Sans MS", 9))
+    num_terms_label.config(font=("Comic Sans MS", 9))
+    error_label.config(font=("Comic Sans MS", 9))
+
+    arithmetic_button.config(font=("Comic Sans MS", 9))
+    geometric_button.config(font=("Comic Sans MS", 9))
+
+    sum_label.config(font=("Comic Sans MS", 9))
+    calculate_button.config(font=("Comic Sans MS", 9))
+    clear_button.config(font=("Comic Sans MS", 9))
     
 #Labels and Entry Widgets
 first_term_label = Label(root, text="First Term: ")
@@ -308,6 +326,7 @@ fonts_menu = Menu(my_menu)
 my_menu.add_cascade(label="Fonts", menu=fonts_menu)
 fonts_menu.add_command(label="Arial", command=arial_font)
 fonts_menu.add_command(label="Helvetica", command=helvetica_font)
+fonts_menu.add_command(label="Comic Sans MS", command=comicsans_font)
 
 #Loops the program
 root.mainloop()
