@@ -212,21 +212,39 @@ def lavender():
 
 #Fonts
 def arial_font():
-    my_text.config(font=('arial', 14)) 
+    first_term_entry.config(font=("arial", 9))
+    common_difference_entry.config(font=("arial", 9))
+    num_terms_entry.config(font=("arial", 9))
+
+    first_term_label.config(font=("arial", 9))
+    common_difference_label.config(font=("arial", 9))
+    num_terms_label.config(font=("arial", 9))
+    error_label.config(font=("arial", 9))
+
+    arithmetic_button.config(font=("arial", 9))
+    geometric_button.config(font=("arial", 9))
+
+    sum_label.config(font=("arial", 9))
+    calculate_button.config(font=("arial", 9))
+    clear_button.config(font=("arial", 9))
     
 
 def helvetica_font():
+    first_term_entry.config(font=("helvetica", 9))
+    common_difference_entry.config(font=("helvetica", 9))
+    num_terms_entry.config(font=("helvetica", 9))
+
     first_term_label.config(font=("helvetica", 9))
-    common_difference_label.config(font="helvetica")
-    num_terms_label.config(font="helvetica")
-    error_label.config(font="helvetica")
+    common_difference_label.config(font=("helvetica", 9))
+    num_terms_label.config(font=("helvetica", 9))
+    error_label.config(font=("helvetica", 9))
 
-    arithmetic_button.config(font="helvetica")
-    geometric_button.config(font="helvetica")
+    arithmetic_button.config(font=("helvetica", 9))
+    geometric_button.config(font=("helvetica", 9))
 
-    sum_label.config(font="helvetica")
-    calculate_button.config(font="helvetica")
-    clear_button.config(font="helvetica")
+    sum_label.config(font=("helvetica", 9))
+    calculate_button.config(font=("helvetica", 9))
+    clear_button.config(font=("helvetica", 9))
     
 #Labels and Entry Widgets
 first_term_label = Label(root, text="First Term: ")
