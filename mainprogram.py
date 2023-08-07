@@ -212,39 +212,42 @@ def lavender():
 
 #Fonts
 def arial_font():
-    first_term_entry.config(font=("Arial Narrow", 10))
-    common_difference_entry.config(font=("Arial Narrow", 10))
-    num_terms_entry.config(font=("Arial Narrow", 10))
+    first_term_entry.config(font=("Arial", 9))
+    common_difference_entry.config(font=("Arial", 10))
+    num_terms_entry.config(font=("Arial", 9))
 
-    first_term_label.config(font=("Arial Narrow", 10))
-    common_difference_label.config(font=("Arial Narrow", 10))
-    num_terms_label.config(font=("Arial Narrow", 10))
-    error_label.config(font=("Arial Narrow", 10))
+    first_term_label.config(font=("Arial", 9))
+    common_difference_label.config(font=("Arial", 9))
+    common_difference_label.place(x=65, y=100)
+    num_terms_label.config(font=("Arial", 9))
+    error_label.config(font=("Arial", 9))
 
-    arithmetic_button.config(font=("Arial Narrow", 10))
-    geometric_button.config(font=("Arial Narrow", 10))
+    arithmetic_button.config(font=("Arial", 9))
+    geometric_button.config(font=("Arial", 9))
 
-    sum_label.config(font=("Arial Narrow", 10))
-    calculate_button.config(font=("Arial Narrow", 10))
-    clear_button.config(font=("Arial Narrow", 10))
+    sum_label.config(font=("Arial", 9))
+    calculate_button.config(font=("Arial", 9))
+    clear_button.config(font=("Arial", 9))
     
 
-def helvetica_font():
-    first_term_entry.config(font=("helvetica", 9))
-    common_difference_entry.config(font=("helvetica", 9))
-    num_terms_entry.config(font=("helvetica", 9))
+def century_gothic():
+    first_term_entry.config(font=("Century Gothic", 9))
+    common_difference_entry.config(font=("Century Gothic", 9))
+    num_terms_entry.config(font=("Century Gothic", 9))
 
-    first_term_label.config(font=("helvetica", 9))
-    common_difference_label.config(font=("helvetica", 9))
-    num_terms_label.config(font=("helvetica", 9))
-    error_label.config(font=("helvetica", 9))
+    first_term_label.config(font=("Century Gothic", 9))
+    first_term_label.place(x=148, y=75)
+    common_difference_label.config(font=("Century Gothic", 9))
+    common_difference_label.place(x= 50, y=100)
+    num_terms_label.config(font=("Century Gothic", 9))
+    error_label.config(font=("Century Gothic", 9))
 
-    arithmetic_button.config(font=("helvetica", 9))
-    geometric_button.config(font=("helvetica", 9))
+    arithmetic_button.config(font=("Century Gothic", 9))
+    geometric_button.config(font=("Century Gothic", 9))
 
-    sum_label.config(font=("helvetica", 9))
-    calculate_button.config(font=("helvetica", 9))
-    clear_button.config(font=("helvetica", 9))
+    sum_label.config(font=("Century Gothic", 9))
+    calculate_button.config(font=("Century Gothic", 9))
+    clear_button.config(font=("Century Gothic", 9))
 
 def comicsans_font():
     
@@ -253,7 +256,9 @@ def comicsans_font():
     num_terms_entry.config(font=("Comic Sans MS", 9))
 
     first_term_label.config(font=("Comic Sans MS", 9))
+    first_term_label.place(x=145, y=75)
     common_difference_label.config(font=("Comic Sans MS", 9))
+    common_difference_label.place(x=65, y=100)
     num_terms_label.config(font=("Comic Sans MS", 9))
     error_label.config(font=("Comic Sans MS", 9))
 
@@ -325,7 +330,7 @@ options_menu.add_command(label="Lavender", command=lavender)
 fonts_menu = Menu(my_menu)
 my_menu.add_cascade(label="Fonts", menu=fonts_menu)
 fonts_menu.add_command(label="Arial", command=arial_font)
-fonts_menu.add_command(label="Helvetica", command=helvetica_font)
+fonts_menu.add_command(label="Century Gothic", command=century_gothic)
 fonts_menu.add_command(label="Comic Sans MS", command=comicsans_font)
 
 #Loops the program
