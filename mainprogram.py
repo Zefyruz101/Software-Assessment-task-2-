@@ -118,7 +118,7 @@ def beige():
 def retro_beige(): 
     main_colour = "#eeebe2"
     second_colour = "#d0c9ae"
-    text_colour = "#9b9994"
+    text_colour = "#6b6567"
     
     root.config(bg=main_colour)
     my_text.config(fg=text_colour)
