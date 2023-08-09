@@ -4,6 +4,7 @@ from tkinter import *
 root = Tk()
 root.title("Summing Series")
 root.geometry("500x400")
+root.grid_columnconfigure(0, weight=1)
 
 #Text specification
 my_text = Text(root)
@@ -271,17 +272,17 @@ def comicsans_font():
     
 #Labels and Entry Widgets
 first_term_label = Label(root, text="First Term: ")
-first_term_label.place(x=150, y=75)
+first_term_label.grid(row=0, column=0, padx=10, pady=5, )
 first_term_entry = Entry(root)
-first_term_entry.place(x=220, y=75, width=150, height=20)
+first_term_entry.grid(row=0, column=1, padx=10, pady=5, sticky="ew")
 
 error_label = Label(root, text="")
 error_label.place(x=200, y=250)
 
 common_difference_label = Label(root, text="Common Difference/Ratio:")
-common_difference_label.place(x=65, y=100) 
+common_difference_label.grid(row=3, column=0, padx=10, pady=5) 
 common_difference_entry = Entry(root)
-common_difference_entry.place(x=220, y=100, width=150, height=20)
+common_difference_entry.grid(row=3, column=1, padx=10, pady=5)
 
 num_terms_label = Label(root, text="Number of Terms:")
 num_terms_label.place(x=110, y=125)
