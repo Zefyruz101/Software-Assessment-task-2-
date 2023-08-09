@@ -89,7 +89,6 @@ def night_on():
     calculate_button.config(bg=main_colour, fg=text_colour)
     clear_button.config(bg=main_colour, fg=text_colour)
 
-#Defining other themes
 #Beige theme
 def beige(): 
     main_colour = "#F5F5DC"
@@ -191,6 +190,7 @@ def lavender():
     main_colour = "#ada6c2"
     second_colour = "#423b5c"
     text_colour = "#ffffff"
+    select_colour = "#423b5c"
 
     root.config(bg=main_colour)
     my_text.config(fg=text_colour)
@@ -203,8 +203,8 @@ def lavender():
     num_terms_label.config(bg=main_colour, fg=text_colour)
     error_label.config(bg=main_colour, fg=text_colour)
 
-    arithmetic_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
-    geometric_button.config(bg=main_colour, fg=text_colour, selectcolor="#F5F5DC")
+    arithmetic_button.config(bg=main_colour, fg=select_colour, selectcolor="#F5F5DC")
+    geometric_button.config(bg=main_colour, fg=select_colour, selectcolor="#F5F5DC")
 
     sum_label.config(bg=main_colour, fg=text_colour)
     calculate_button.config(bg=main_colour, fg=text_colour)
@@ -229,7 +229,6 @@ def arial_font():
     calculate_button.config(font=("Arial", 9))
     clear_button.config(font=("Arial", 9))
     
-
 def century_gothic():
     first_term_entry.config(font=("Century Gothic", 9))
     common_difference_entry.config(font=("Century Gothic", 9))
@@ -269,6 +268,10 @@ def comicsans_font():
     calculate_button.config(font=("Comic Sans MS", 9))
     clear_button.config(font=("Comic Sans MS", 9))
     
+#test
+def test():
+    pass
+
 #Labels and Entry Widgets
 first_term_label = Label(root, text="First Term: ")
 first_term_label.place(x=150, y=75)
@@ -326,12 +329,17 @@ options_menu.add_command(label="Aether", command=aether)
 options_menu.add_command(label="Blueberry Light", command=blueberry_light)
 options_menu.add_command(label="Lavender", command=lavender)
 
-#Font buttons
+#Font Type buttons
 fonts_menu = Menu(my_menu)
 my_menu.add_cascade(label="Fonts", menu=fonts_menu)
 fonts_menu.add_command(label="Arial", command=arial_font)
 fonts_menu.add_command(label="Century Gothic", command=century_gothic)
 fonts_menu.add_command(label="Comic Sans MS", command=comicsans_font)
+
+font_size_menu = Menu(my_menu)
+my_menu.add_cascade(label="Font Sizes", menu=font_size_menu)
+font_size_menu.add_command(label="50%", command=test)
+
 
 #Loops the program
 root.mainloop()
