@@ -3,7 +3,13 @@ from tkinter import *
 #Main Window
 root = Tk()
 root.title("Summing Series")
-root.geometry("500x400")
+
+default_font_name = "Arial"
+default_font_size = 9
+defualt_geometry_x = 500
+default_geometry_y = 400
+
+root.geometry("{width}x{height}".format(width=defualt_geometry_x, height=default_geometry_y))
 
 #Text specification
 my_text = Text(root)
@@ -282,35 +288,37 @@ def comicsans_font():
     clear_button.config(font=("Comic Sans MS", 9))
 
 #test
-font_name = "Arial"
+font_name = default_font_name
 
-def select_font(font_name):
+
+
+
+def reset_scaling(x):
+    global font_size
+    global geometry_x
+    global geometry_y
     
+    font_size = default_font_size * x
+    geometry_x = defualt_geometry_x * x
+    geometry_y = default_geometry_y * x
 
+    root.geometry("{width}x{height}".format(width=geometry_x, height=geometry_y))
+    first_term_entry.config(font=(font_name , font_size))
+    common_difference_entry.config(font=(font_name , font_size))
+    num_terms_entry.config(font=(font_name , font_size))
 
-def reset_scaling():
-    original_font_size = 9
-
-    global current_scaling_factor
-    current_scaling_factor = 1.0
-    scale_elements(current_scaling_factor)
-    root.geometry("500x400")
-    first_term_entry.config(font=("Arial", 9))
-    common_difference_entry.config(font=("Arial", 10))
-    num_terms_entry.config(font=("Arial", 9))
-
-    first_term_label.config(font=("Arial", 9))
-    common_difference_label.config(font=("Arial", 9))
+    first_term_label.config(font=(font_name , font_size))
+    common_difference_label.config(font=(font_name , font_size))
     common_difference_label.place(x=65, y=100)
-    num_terms_label.config(font=("Arial", 9))
-    error_label.config(font=("Arial", 9))
+    num_terms_label.config(font=(font_name , font_size))
+    error_label.config(font=(font_name , font_size))
 
-    arithmetic_button.config(font=("Arial", 9))
-    geometric_button.config(font=("Arial", 9))
+    arithmetic_button.config(font=(font_name , font_size))
+    geometric_button.config(font=(font_name , font_size))
 
-    sum_label.config(font=("Arial", 9))
-    calculate_button.config(font=("Arial", 9))
-    clear_button.config(font=("Arial", 9))
+    sum_label.config(font=(font_name , font_size))
+    calculate_button.config(font=(font_name , font_size))
+    clear_button.config(font=(font_name , font_size))
 
 def scaling_150():
     global current_scaling_factor
@@ -401,8 +409,9 @@ fonts_menu.add_command(label="Comic Sans MS", command= comicsans_font)
 
 scaling_menu = Menu(my_menu)
 my_menu.add_cascade(label="Scaling", menu= scaling_menu)
-scaling_menu.add_command(label="100%" , command= reset_scaling)
-scaling_menu.add_command(label="150%", command=scaling_150)
+scaling_menu.add_command(label="100%" , command= reset_scaling(1))
+scaling_menu.add_command(label="150%" , command= reset_scaling(2))
+
 
 
 #Loops the program
