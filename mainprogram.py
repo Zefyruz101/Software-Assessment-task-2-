@@ -269,7 +269,7 @@ def comicsans_font():
     clear_button.config(font=("Comic Sans MS", 9))
     
 #test
-def test():
+def scaling_150():
     pass
 
 #Labels and Entry Widgets
@@ -338,7 +338,7 @@ fonts_menu.add_command(label="Comic Sans MS", command=comicsans_font)
 
 font_size_menu = Menu(my_menu)
 my_menu.add_cascade(label="Font Sizes", menu=font_size_menu)
-font_size_menu.add_command(label="50%", command=test)
+font_size_menu.add_command(label="150%", command=scaling_150)
 
 
 #Loops the program
