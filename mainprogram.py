@@ -235,17 +235,6 @@ def arial_font():
     calculate_button.config(font=("Arial", 9))
     clear_button.config(font=("Arial", 9))
 
-original_font_size = 9
-
-current_scaling_factor = 1.0
-
-
-
-def scale_elements(scale_factor):
-    global current_scaling_factor
-    current_scaling_factor = scale_factor
-
-    root.option_add("Font", f"{font_name}")
 
     
 def century_gothic():
@@ -290,17 +279,14 @@ def comicsans_font():
 #test
 font_name = default_font_name
 
-
-
-
-def reset_scaling(x):
+def reset_scaling():
     global font_size
     global geometry_x
     global geometry_y
-    
-    font_size = default_font_size * x
-    geometry_x = defualt_geometry_x * x
-    geometry_y = default_geometry_y * x
+
+    font_size = default_font_size * 1
+    geometry_x = defualt_geometry_x * 1
+    geometry_y = default_geometry_y * 1
 
     root.geometry("{width}x{height}".format(width=geometry_x, height=geometry_y))
     first_term_entry.config(font=(font_name , font_size))
@@ -321,26 +307,33 @@ def reset_scaling(x):
     clear_button.config(font=(font_name , font_size))
 
 def scaling_150():
-    global current_scaling_factor
-    current_scaling_factor = 1.5
-    scale_elements(current_scaling_factor)
-    root.geometry("750x600")
-    first_term_entry.config(font=("Arial", 13))
-    common_difference_entry.config(font=("Arial", 13))
-    num_terms_entry.config(font=("Arial", 13))
+    global font_size
+    global geometry_x
+    global geometry_y
 
-    first_term_label.config(font=("Arial", 13))
-    common_difference_label.config(font=("Arial", 13))
+    font_size = default_font_size * 2
+    geometry_x = defualt_geometry_x * 2
+    geometry_y = default_geometry_y * 2
+
+    root.geometry("{width}x{height}".format(width=defualt_geometry_x, height=default_geometry_y))
+
+    first_term_entry.config(font=(font_name , font_size))
+    common_difference_entry.config(font=(font_name , font_size))
+    num_terms_entry.config(font=(font_name , font_size))
+
+    first_term_label.config(font=(font_name , font_size))
+    common_difference_label.config(font=(font_name , font_size))
     common_difference_label.place(x=65, y=100)
-    num_terms_label.config(font=("Arial", 13))
-    error_label.config(font=("Arial", 13))
+    num_terms_label.config(font=(font_name , font_size))
+    error_label.config(font=(font_name , font_size))
 
-    arithmetic_button.config(font=("Arial", 13))
-    geometric_button.config(font=("Arial", 13))
+    arithmetic_button.config(font=(font_name , font_size))
+    geometric_button.config(font=(font_name , font_size))
 
-    sum_label.config(font=("Arial", 13))
-    calculate_button.config(font=("Arial", 13))
-    clear_button.config(font=("Arial", 13))
+    sum_label.config(font=(font_name , font_size))
+    calculate_button.config(font=(font_name , font_size))
+    clear_button.config(font=(font_name , font_size))
+
 
 
 #Labels and Entry Widgets
@@ -409,8 +402,8 @@ fonts_menu.add_command(label="Comic Sans MS", command= comicsans_font)
 
 scaling_menu = Menu(my_menu)
 my_menu.add_cascade(label="Scaling", menu= scaling_menu)
-scaling_menu.add_command(label="100%" , command= reset_scaling(1))
-scaling_menu.add_command(label="150%" , command= reset_scaling(2))
+scaling_menu.add_command(label="100%" , command= reset_scaling)
+scaling_menu.add_command(label="150%" , command= scaling_150)
 
 
 
