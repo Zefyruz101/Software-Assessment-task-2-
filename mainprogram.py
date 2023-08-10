@@ -6,10 +6,10 @@ root.title("Summing Series")
 
 default_font_name = "Arial"
 default_font_size = 9
-defualt_geometry_x = 500
+default_geometry_x = 500
 default_geometry_y = 400
 
-root.geometry("{width}x{height}".format(width=defualt_geometry_x, height=default_geometry_y))
+root.geometry("{width}x{height}".format(width=default_geometry_x, height=default_geometry_y))
 
 #Text specification
 my_text = Text(root)
@@ -285,7 +285,7 @@ def reset_scaling():
     global geometry_y
 
     font_size = default_font_size * 1
-    geometry_x = defualt_geometry_x * 1
+    geometry_x = default_geometry_x * 1
     geometry_y = default_geometry_y * 1
 
     root.geometry("{width}x{height}".format(width=geometry_x, height=geometry_y))
@@ -312,10 +312,10 @@ def scaling_150():
     global geometry_y
 
     font_size = default_font_size * 2
-    geometry_x = defualt_geometry_x * 2
+    geometry_x = default_geometry_x * 2
     geometry_y = default_geometry_y * 2
 
-    root.geometry("{width}x{height}".format(width=defualt_geometry_x, height=default_geometry_y))
+    root.geometry("750x600")
 
     first_term_entry.config(font=(font_name , font_size))
     common_difference_entry.config(font=(font_name , font_size))
