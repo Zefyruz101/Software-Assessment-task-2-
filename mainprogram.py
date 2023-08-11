@@ -290,21 +290,32 @@ def reset_scaling():
 
     root.geometry("{width}x{height}".format(width=geometry_x, height=geometry_y))
     first_term_entry.config(font=(font_name , font_size))
+    first_term_entry.place(x=220, y=75, width=150, height=20)
     common_difference_entry.config(font=(font_name , font_size))
+    common_difference_entry.place(x=220, y=100, width=150, height=20)
     num_terms_entry.config(font=(font_name , font_size))
+    num_terms_entry.place(x=220, y=125, width=150, height=20)
 
     first_term_label.config(font=(font_name , font_size))
+    first_term_label.place(x=150, y=75)
     common_difference_label.config(font=(font_name , font_size))
     common_difference_label.place(x=65, y=100)
     num_terms_label.config(font=(font_name , font_size))
+    num_terms_label.place(x=110, y=125)
     error_label.config(font=(font_name , font_size))
+    error_label.place(x=200, y=250)
 
     arithmetic_button.config(font=(font_name , font_size))
+    arithmetic_button.place(x=100, y=170)
     geometric_button.config(font=(font_name , font_size))
+    geometric_button.place(x=100, y=190)
 
     sum_label.config(font=(font_name , font_size))
+    sum_label.place(x=230, y=200)
     calculate_button.config(font=(font_name , font_size))
+    calculate_button.place(x=275, y=160)
     clear_button.config(font=(font_name , font_size))
+    clear_button.place(x=230, y=160)
 
 def scaling_150():
     global font_size
@@ -315,24 +326,35 @@ def scaling_150():
     geometry_x = default_geometry_x * 2
     geometry_y = default_geometry_y * 2
 
-    root.geometry("750x600")
+    root.geometry("550x450")
 
     first_term_entry.config(font=(font_name , font_size))
+    first_term_entry.place(x=300, y=70,width=200)
     common_difference_entry.config(font=(font_name , font_size))
+    common_difference_entry.place(x=300, y=100,width=200)
     num_terms_entry.config(font=(font_name , font_size))
+    num_terms_entry.place(x=300, y=130,width=200)
 
     first_term_label.config(font=(font_name , font_size))
+    first_term_label.place(x=180, y=65)
     common_difference_label.config(font=(font_name , font_size))
-    common_difference_label.place(x=65, y=100)
+    common_difference_label.place(x=15, y=95)
     num_terms_label.config(font=(font_name , font_size))
+    num_terms_label.place(x=103, y=123)
     error_label.config(font=(font_name , font_size))
+    error_label.place(x=70, y=300)
 
     arithmetic_button.config(font=(font_name , font_size))
+    arithmetic_button.place(x=70, y=170)
     geometric_button.config(font=(font_name , font_size))
+    geometric_button.place(x=70, y=200)
 
     sum_label.config(font=(font_name , font_size))
+    sum_label.place(x=80, y=250)
     calculate_button.config(font=(font_name , font_size))
+    calculate_button.place(x=390, y=180)
     clear_button.config(font=(font_name , font_size))
+    clear_button.place(x=300, y=180)
 
 
 
