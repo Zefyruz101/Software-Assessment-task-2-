@@ -278,6 +278,8 @@ def comicsans_font():
 
 #test
 font_name = default_font_name
+font_size = 9
+scaling_factor = 1.0
 
 def reset_scaling():
     global font_size
@@ -319,14 +321,8 @@ def reset_scaling():
 
 def scaling_150():
     global font_size
-    global geometry_x
-    global geometry_y
-
     font_size = default_font_size * 2
-    geometry_x = default_geometry_x * 2
-    geometry_y = default_geometry_y * 2
-
-    root.geometry("550x450")
+    root.geometry("600x500")
 
     first_term_entry.config(font=(font_name , font_size))
     first_term_entry.place(x=300, y=70,width=200)
@@ -356,6 +352,39 @@ def scaling_150():
     clear_button.config(font=(font_name , font_size))
     clear_button.place(x=300, y=180)
 
+    if font_name in ["Century Gothic"]:
+        first_term_entry.place(x=310, y=70)
+        common_difference_entry.place(x=310, y=100)
+        num_terms_entry.place(x=310, y=125)
+        first_term_label.place(x=165, y=60)
+
+
+
+def update_font():
+    new_font = (font_name, int(font_size * scaling_factor))
+    for widget in root.winfo_children():
+        if isinstance(widget, (Label, Entry, Button, Radiobutton, Text)):
+            widget.config(font=new_font)
+    if scaling_factor == 1.0:
+        reset_scaling()
+    elif scaling_factor == 1.5:
+        scaling_150()
+
+
+def change_font(new_font_name):
+    global font_name
+    font_name = new_font_name
+    update_font()
+
+def change_font_size(new_size):
+    global font_size
+    font_size = new_size
+    update_font()
+
+def change_scaling(new_scaling):
+    global scaling_factor
+    scaling_factor = new_scaling
+    update_font()
 
 
 #Labels and Entry Widgets
@@ -418,16 +447,18 @@ options_menu.add_command(label="Lavender", command=lavender)
 #Font Type buttons
 fonts_menu = Menu(my_menu)
 my_menu.add_cascade(label="Fonts", menu=fonts_menu)
-fonts_menu.add_command(label="Arial", command=arial_font)
-fonts_menu.add_command(label="Century Gothic", command=century_gothic)
-fonts_menu.add_command(label="Comic Sans MS", command= comicsans_font)
+fonts_menu.add_command(label="Arial", command=lambda: change_font("Arial"))
+fonts_menu.add_command(label="Century Gothic", command=lambda: change_font("Century Gothic"))
+fonts_menu.add_command(label="Comic Sans MS", command=lambda: change_font("Comic Sans MS"))
 
 scaling_menu = Menu(my_menu)
 my_menu.add_cascade(label="Scaling", menu= scaling_menu)
-scaling_menu.add_command(label="100%" , command= reset_scaling)
-scaling_menu.add_command(label="150%" , command= scaling_150)
+scaling_menu.add_command(label="100%" , command=lambda: change_scaling(1.0))
+scaling_menu.add_command(label="150%" , command=lambda: change_scaling(1.5))
 
 
+# Initialize font for all widgets
+update_font()
 
 #Loops the program
 root.mainloop()

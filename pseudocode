@@ -1,0 +1,296 @@
+BEGIN
+
+INIT main window
+SET main window title to “Summing Series” 
+SET main window size to (500, 400)
+
+FUNCTION calculating sum of arithmetic and geometric series
+	GET float from user for the First term
+	GET float from user for Common difference
+	GET integer from user for the number of terms
+	
+	IF the selected series type is equal to “Arithmetic” THEN
+		CALCULATE sum of arithmetic series
+	ELSE	
+		CALCULATE sum of geometric series
+
+	DISPLAY sum of arithmetic or geometric series
+	
+	ENDIF
+	
+	IF user enters an invalid input THEN
+		DISPLAY “Invalid input! Please enter a valid number” by calling the show_error function
+	ENDIF
+
+FUNCTION clear all text in entry field
+	CLEAR first_term_entry
+	CLEAR common_difference_entry
+	CLEAR num_terms_entry
+	CLEAR sum_label
+
+FUNCTION night mode off
+	SET main_colour to (#f0f0f0)
+	SET second_colour to ("White")
+	SET text_colour to ("Black")
+
+   	SET root background to maincolour
+  	SET my_text foreground to text_colour
+	SET first_term_entry foreground to text colour, background to second_colour and insertion cursor colour to "black"
+    	SET common_difference_entry foreground to text_colour, background to second_colour, and insertion cursor colour to "black"
+   	SET num_terms_entry foreground to text_colour, background to second_colour, and insertion cursor colour to "black"
+
+    	SET first_term_label background to main_colour, foreground to text_colour
+    	SET common_difference_label background to main_colour, foreground to text_colour
+    	SET num_terms_label background to main_colour, foreground to text_colour
+   	SET error_label background to main_colour, foreground to text_colour
+
+    	SET arithmetic_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to 'White'
+    	SET geometric_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to 'White'
+
+    	SET sum_label background to main_colour, foreground to text_colour
+    	SET calculate_button background to main_colour, foreground to text_colour
+    	SET clear_button background to main_colour, foreground to text_colour
+
+FUNCTION night mode on
+	SET main_colour to 'Black'
+	SET second_colour to 'Grey'
+	SET text_colour to 'White'
+
+   	SET root background to maincolour
+  	SET my_text foreground to text_colour
+	SET first_term_entry foreground to text colour, background to second_colour and insertion cursor colour to 'White'
+    	SET common_difference_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+   	SET num_terms_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+
+    	SET first_term_label background to main_colour, foreground to text_colour
+    	SET common_difference_label background to main_colour, foreground to text_colour
+    	SET num_terms_label background to main_colour, foreground to text_colour
+   	SET error_label background to main_colour, foreground to text_colour
+
+    	SET arithmetic_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to 'Black'
+    	SET geometric_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to 'Black'
+
+    	SET sum_label background to main_colour, foreground to text_colour
+    	SET calculate_button background to main_colour, foreground to text_colour
+    	SET clear_button background to main_colour, foreground to text_colour
+
+FUNCTION beige colour theme
+	SET main_colour to '#F5F5DC'
+	SET second_colour to '#D5BA99'
+	SET text_colour to '#8B4411'
+
+   	SET root background to maincolour
+  	SET my_text foreground to text_colour
+	SET first_term_entry foreground to text colour, background to second_colour and insertion cursor colour to 'White'
+    	SET common_difference_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+   	SET num_terms_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+
+    	SET first_term_label background to main_colour, foreground to text_colour
+    	SET common_difference_label background to main_colour, foreground to text_colour
+    	SET num_terms_label background to main_colour, foreground to text_colour
+   	SET error_label background to main_colour, foreground to text_colour
+
+    	SET arithmetic_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to '#F5F5DC'
+    	SET geometric_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to '#F5F5DC'
+
+    	SET sum_label background to main_colour, foreground to text_colour
+    	SET calculate_button background to main_colour, foreground to text_colour
+    	SET clear_button background to main_colour, foreground to text_colour
+
+FUNCTION retro beige colour theme
+	SET main_colour to '#eeebe2'
+	SET second_colour to '#d0c9ae'
+	SET text_colour to '#6b6567'
+
+   	SET root background to maincolour
+  	SET my_text foreground to text_colour
+	SET first_term_entry foreground to text colour, background to second_colour and insertion cursor colour to 'White'
+    	SET common_difference_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+   	SET num_terms_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+
+    	SET first_term_label background to main_colour, foreground to text_colour
+    	SET common_difference_label background to main_colour, foreground to text_colour
+    	SET num_terms_label background to main_colour, foreground to text_colour
+   	SET error_label background to main_colour, foreground to text_colour
+
+    	SET arithmetic_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to '#F5F5DC'
+    	SET geometric_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to '#F5F5DC'
+
+    	SET sum_label background to main_colour, foreground to text_colour
+    	SET calculate_button background to main_colour, foreground to text_colour
+    	SET clear_button background to main_colour, foreground to text_colour
+
+FUNCTION aether colour theme
+	SET main_colour to '#101820'
+	SET second_colour to '#452e54'
+	SET text_colour to '#cf6bdd'
+
+   	SET root background to maincolour
+  	SET my_text foreground to text_colour
+	SET first_term_entry foreground to text colour, background to second_colour and insertion cursor colour to 'White'
+    	SET common_difference_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+   	SET num_terms_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+
+    	SET first_term_label background to main_colour, foreground to text_colour
+    	SET common_difference_label background to main_colour, foreground to text_colour
+    	SET num_terms_label background to main_colour, foreground to text_colour
+   	SET error_label background to main_colour, foreground to text_colour
+
+    	SET arithmetic_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to '#F5F5DC'
+    	SET geometric_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to '#F5F5DC'
+
+    	SET sum_label background to main_colour, foreground to text_colour
+    	SET calculate_button background to main_colour, foreground to text_colour
+    	SET clear_button background to main_colour, foreground to text_colour
+
+FUNCTION blueberry light colour theme
+	SET main_colour to '#dae0f5'
+	SET second_colour to '#8fa4b8'
+	SET text_colour to '#6a618a'
+
+   	SET root background to maincolour
+  	SET my_text foreground to text_colour
+	SET first_term_entry foreground to text colour, background to second_colour and insertion cursor colour to 'White'
+    	SET common_difference_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+   	SET num_terms_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+
+    	SET first_term_label background to main_colour, foreground to text_colour
+    	SET common_difference_label background to main_colour, foreground to text_colour
+    	SET num_terms_label background to main_colour, foreground to text_colour
+   	SET error_label background to main_colour, foreground to text_colour
+
+    	SET arithmetic_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to '#F5F5DC'
+    	SET geometric_radio_button background to main_colour, foreground to text_colour, radio button insertion cursor colour to '#F5F5DC'
+
+    	SET sum_label background to main_colour, foreground to text_colour
+    	SET calculate_button background to main_colour, foreground to text_colour
+    	SET clear_button background to main_colour, foreground to text_colour
+
+FUNCTION lavender colour theme
+	SET main_colour to '#ada6c2'
+	SET second_colour to '#423b5c'
+	SET text_colour to '#ffffff'
+	SET select_colour to '#423b5c'
+
+   	SET root background to maincolour
+  	SET my_text foreground to text_colour
+	SET first_term_entry foreground to text colour, background to second_colour and insertion cursor colour to 'White'
+    	SET common_difference_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+   	SET num_terms_entry foreground to text_colour, background to second_colour, and insertion cursor colour to 'White'
+
+    	SET first_term_label background to main_colour, foreground to text_colour
+    	SET common_difference_label background to main_colour, foreground to text_colour
+    	SET num_terms_label background to main_colour, foreground to text_colour
+   	SET error_label background to main_colour, foreground to text_colour
+
+    	SET arithmetic_radio_button background to main_colour, foreground to select_colour, radio button insertion cursor colour to '#F5F5DC'
+    	SET geometric_radio_button background to main_colour, foreground to select_colour, radio button insertion cursor colour to '#F5F5DC'
+
+    	SET sum_label background to main_colour, foreground to text_colour
+    	SET calculate_button background to main_colour, foreground to text_colour
+    	SET clear_button background to main_colour, foreground to text_colour
+
+FUNCTION arial font
+	SET first_term_entry font to arial, font size: 9
+    	SET common_difference_entry font to arial, font size: 9
+   	SET num_terms_entry font to arial, font size: 9
+
+    	SET first_term_label font to arial, font size: 9
+    	SET common_difference_label font to arial, font size: 9
+	SET common_difference_label location to x=65, y=100
+    	SET num_terms_label font to arial, font size: 9
+   	SET error_label font to arial, font size: 9
+
+    	SET arithmetic_radio_button font to arial, font size: 9
+    	SET geometric_radio_button font to arial, font size: 9
+
+    	SET sum_label font to arial, font size: 9
+    	SET calculate_font to arial, font size: 9
+    	SET clear_button font to arial, font size: 9
+
+FUNCTION century gothic font
+	SET first_term_entry font to 'century gothic', font size: 9
+    	SET common_difference_entry font to 'century gothic', font size: 9
+   	SET num_terms_entry font to 'century gothic', font size: 9
+
+    	SET first_term_label font to 'century gothic', font size: 9
+	SET first_term_label location to x=148, y=75
+    	SET common_difference_label font to 'century gothic', font size: 9
+	SET common_difference_label location to x=50, y=100
+    	SET num_terms_label font to 'century gothic', font size: 9
+   	SET error_label font to 'century gothic', font size: 9
+
+    	SET arithmetic_radio_button font to 'century gothic', font size: 9
+    	SET geometric_radio_button font to 'century gothic', font size: 9
+
+    	SET sum_label font to 'century gothic', font size: 9
+    	SET calculate_font to 'century gothic', font size: 9
+    	SET clear_button font to 'century gothic', font size: 9
+
+FUNCTION comic sans font
+	SET first_term_entry font to 'Comic Sans MS', font size: 9
+    	SET common_difference_entry font to 'Comic Sans MS', font size: 9
+   	SET num_terms_entry font to 'Comic Sans MS', font size: 9
+
+    	SET first_term_label font to 'Comic Sans MS', font size: 9
+    	SET common_difference_label font to 'Comic Sans MS', font size: 9
+    	SET num_terms_label font to 'Comic Sans MS', font size: 9
+   	SET error_label font to 'Comic Sans MS', font size: 9
+
+    	SET arithmetic_radio_button font to 'Comic Sans MS', font size: 9
+    	SET geometric_radio_button font to 'Comic Sans MS', font size: 9
+
+    	SET sum_label font to 'Comic Sans MS', font size: 9
+    	SET calculate_font to 'Comic Sans MS', font size: 9
+    	SET clear_button font to 'Comic Sans MS', font size: 9
+
+INIT first_term_label 
+SET first_term_label location to x=150 and y=75
+INIT first_term_entry field
+SET first_term_entry field location to x=220, y=75 and size to, width=150, height=20
+
+INIT common_difference_label 
+SET common_difference_label location to x=65, y=100
+INIT common_difference_entry field 
+SET common_difference_entry location to x=220, y=100 and size to
+ width=150, height=20
+
+INIT num_terms_label
+SET num_terms_label location to x=110, y=125
+INIT num_terms_entry 
+SET num_terms_entry location to x=220, y=125 and width=150, height=20
+
+INIT error_label 
+SET error_label to x=200, y=250
+
+INIT arithmetic_radio_button
+SET arithmetic_radio_button location to x=100, y=170
+
+INIT geometric_radio_button 
+SET geometric_radio_button location to x=100, y=190
+
+INIT sum_label
+SET sum_label location to x=230, y=200
+
+INIT menu for the application
+
+INIT file menu
+INIT an exit command that terminates the program
+
+INIT themes menu
+INIT a menu option that changes the themes of the program to the original theme by calling on the original theme function
+INIT a menu option that changes the themes of the program to ‘night mode’ by calling on the night mode on function
+INIT a menu option that changes the themes of the program to ‘Beige’ by calling on the beige theme function
+INIT a menu option that changes the themes of the program to ‘Retro Beige’ by calling on the retro beige theme function
+INIT a menu option that changes the themes of the program to ‘Aether’ by calling on the the aether theme function
+INIT a menu option that changes the themes of the program to ‘Blueberry Light’ by calling on the blueberry light theme function
+INIT a menu option that changes the themes of the program to ‘Lavender’ by calling on the lavender theme function
+
+INIT fonts menu 
+INIT a menu option that changes the fonts of the program to ‘Arial’
+INIT a menu option that changes the fonts of the program to ‘Century Gothic’
+INIT a menu option that changes the fonts of the program to ‘Comic Sans MS 
+
+End
+
+

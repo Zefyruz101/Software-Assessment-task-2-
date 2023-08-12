@@ -3,7 +3,13 @@ from tkinter import *
 #Main Window
 root = Tk()
 root.title("Summing Series")
-root.geometry("500x400")
+
+default_font_name = "Arial"
+default_font_size = 9
+default_geometry_x = 500
+default_geometry_y = 400
+
+root.geometry("{width}x{height}".format(width=default_geometry_x, height=default_geometry_y))
 
 #Text specification
 my_text = Text(root)
@@ -229,17 +235,6 @@ def arial_font():
     calculate_button.config(font=("Arial", 9))
     clear_button.config(font=("Arial", 9))
 
-original_font_size = 9
-
-current_scaling_factor = 1.0
-
-font_name = "Arial"
-
-def scale_elements(scale_factor):
-    global current_scaling_factor
-    current_scaling_factor = scale_factor
-
-    root.option_add("Font", f"{font_name}")
 
     
 def century_gothic():
@@ -267,7 +262,7 @@ def comicsans_font():
     common_difference_entry.config(font=("Comic Sans MS", 9))
     num_terms_entry.config(font=("Comic Sans MS", 9))
 
-    first_term_label.config(font=("Comic Sans MS", 9))
+    first_term_label.config(font=("Comic Sans MS"))
     first_term_label.place(x=145, y=75)
     common_difference_label.config(font=("Comic Sans MS", 9))
     common_difference_label.place(x=65, y=100)
@@ -282,17 +277,115 @@ def comicsans_font():
     clear_button.config(font=("Comic Sans MS", 9))
 
 #test
+font_name = default_font_name
+font_size = 9
+scaling_factor = 1.0
+
 def reset_scaling():
-    global current_scaling_factor
-    current_scaling_factor = 1.0
-    scale_elements(current_scaling_factor)
-    root.geometry("500x400")
+    global font_size
+    global geometry_x
+    global geometry_y
+
+    font_size = default_font_size * 1
+    geometry_x = default_geometry_x * 1
+    geometry_y = default_geometry_y * 1
+
+    root.geometry("{width}x{height}".format(width=geometry_x, height=geometry_y))
+    first_term_entry.config(font=(font_name , font_size))
+    first_term_entry.place(x=220, y=75, width=150, height=20)
+    common_difference_entry.config(font=(font_name , font_size))
+    common_difference_entry.place(x=220, y=100, width=150, height=20)
+    num_terms_entry.config(font=(font_name , font_size))
+    num_terms_entry.place(x=220, y=125, width=150, height=20)
+
+    first_term_label.config(font=(font_name , font_size))
+    first_term_label.place(x=150, y=75)
+    common_difference_label.config(font=(font_name , font_size))
+    common_difference_label.place(x=65, y=100)
+    num_terms_label.config(font=(font_name , font_size))
+    num_terms_label.place(x=110, y=125)
+    error_label.config(font=(font_name , font_size))
+    error_label.place(x=200, y=250)
+
+    arithmetic_button.config(font=(font_name , font_size))
+    arithmetic_button.place(x=100, y=170)
+    geometric_button.config(font=(font_name , font_size))
+    geometric_button.place(x=100, y=190)
+
+    sum_label.config(font=(font_name , font_size))
+    sum_label.place(x=230, y=200)
+    calculate_button.config(font=(font_name , font_size))
+    calculate_button.place(x=275, y=160)
+    clear_button.config(font=(font_name , font_size))
+    clear_button.place(x=230, y=160)
 
 def scaling_150():
-    global current_scaling_factor
-    current_scaling_factor = 1.5
-    scale_elements(current_scaling_factor)
-    root.geometry("750x600")
+    global font_size
+    font_size = default_font_size * 2
+    root.geometry("600x500")
+
+    first_term_entry.config(font=(font_name , font_size))
+    first_term_entry.place(x=300, y=70,width=200)
+    common_difference_entry.config(font=(font_name , font_size))
+    common_difference_entry.place(x=300, y=100,width=200)
+    num_terms_entry.config(font=(font_name , font_size))
+    num_terms_entry.place(x=300, y=130,width=200)
+
+    first_term_label.config(font=(font_name , font_size))
+    first_term_label.place(x=180, y=65)
+    common_difference_label.config(font=(font_name , font_size))
+    common_difference_label.place(x=15, y=95)
+    num_terms_label.config(font=(font_name , font_size))
+    num_terms_label.place(x=103, y=123)
+    error_label.config(font=(font_name , font_size))
+    error_label.place(x=70, y=300)
+
+    arithmetic_button.config(font=(font_name , font_size))
+    arithmetic_button.place(x=70, y=170)
+    geometric_button.config(font=(font_name , font_size))
+    geometric_button.place(x=70, y=200)
+
+    sum_label.config(font=(font_name , font_size))
+    sum_label.place(x=80, y=250)
+    calculate_button.config(font=(font_name , font_size))
+    calculate_button.place(x=390, y=180)
+    clear_button.config(font=(font_name , font_size))
+    clear_button.place(x=300, y=180)
+
+    if font_name in ["Century Gothic"]:
+        first_term_label.place(x=165, y=60)
+
+
+    
+
+def update_font():
+    new_font = (font_name, int(font_size * scaling_factor))
+    for widget in root.winfo_children():
+        if isinstance(widget, (Label, Entry, Button, Radiobutton, Text)):
+            widget.config(font=new_font)
+    if scaling_factor == 1.0:
+        reset_scaling()
+    elif scaling_factor == 1.5:
+        scaling_150()
+
+
+def change_font(new_font_name):
+    global font_name
+    font_name = new_font_name
+    update_font()
+
+def change_font_size(new_size):
+    global font_size
+    font_size = new_size
+    update_font()
+
+def change_scaling(new_scaling):
+    global scaling_factor
+    scaling_factor = new_scaling
+    update_font()
+
+
+
 
 
 #Labels and Entry Widgets
@@ -355,14 +448,18 @@ options_menu.add_command(label="Lavender", command=lavender)
 #Font Type buttons
 fonts_menu = Menu(my_menu)
 my_menu.add_cascade(label="Fonts", menu=fonts_menu)
-fonts_menu.add_command(label="Arial", command=arial_font)
-fonts_menu.add_command(label="Century Gothic", command=century_gothic)
-fonts_menu.add_command(label="Comic Sans MS", command= comicsans_font)
+fonts_menu.add_command(label="Arial", command=lambda: change_font("Arial"))
+fonts_menu.add_command(label="Century Gothic", command=lambda: change_font("Century Gothic"))
+fonts_menu.add_command(label="Comic Sans MS", command=lambda: change_font("Comic Sans MS"))
 
 scaling_menu = Menu(my_menu)
 my_menu.add_cascade(label="Scaling", menu= scaling_menu)
-scaling_menu.add_command(label="100%" , command= reset_scaling)
-scaling_menu.add_command(label="150%", command=scaling_150)
+scaling_menu.add_command(label="100%" , command=lambda: change_scaling(1.0))
+scaling_menu.add_command(label="150%" , command=lambda: change_scaling(1.5))
+
+
+# Initialize font for all widgets
+update_font()
 
 
 #Loops the program
