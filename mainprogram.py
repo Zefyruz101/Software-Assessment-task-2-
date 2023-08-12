@@ -353,10 +353,32 @@ def scaling_150():
     clear_button.place(x=300, y=180)
 
     if font_name in ["Century Gothic"]:
-        first_term_entry.place(x=310, y=70)
-        common_difference_entry.place(x=310, y=100)
-        num_terms_entry.place(x=310, y=125)
-        first_term_label.place(x=165, y=60)
+        first_term_entry.place(x=330, y=70)
+        common_difference_entry.place(x=330, y=100)
+        num_terms_entry.place(x=330, y=130)
+
+        first_term_label.place(x=210, y=60)
+        common_difference_label.place(x=0, y=90)
+        num_terms_label.place(x=117, y=120)
+
+        arithmetic_button.place(x=70, y=170)
+        geometric_button.place(x=70, y=205)
+        clear_button.place(x=310, y=180)
+        calculate_button.place(x=400, y=180)
+
+    elif font_name in ["Comic Sans MS"]:
+        first_term_entry.place(x=330, y=70)
+        common_difference_entry.place(x=330, y=100)
+        num_terms_entry.place(x=330, y=130)
+
+        first_term_label.place(x=200, y=60)
+        common_difference_label.place(x=120, y=100)
+        num_terms_label.place(x=117, y=120)
+
+        arithmetic_button.place(x=70, y=170)
+        geometric_button.place(x=70, y=205)
+        clear_button.place(x=310, y=180)
+        calculate_button.place(x=400, y=180)
 
 
 
