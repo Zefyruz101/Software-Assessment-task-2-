@@ -447,7 +447,7 @@ file_menu.add_command(label="Exit", command=root.destroy)
 
 #Themes & Options
 themes_menu = Menu(my_menu)
-themes_menu.add_cascade(label="Themes", menu=themes_menu)
+my_menu.add_cascade(label="Themes", menu=themes_menu)
 themes_menu.add_command(label='Original Theme',command = night_off)
 themes_menu.add_command(label='Night Mode', command = night_on)
 themes_menu.add_command(label="Beige", command = beige)
