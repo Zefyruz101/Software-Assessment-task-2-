@@ -234,8 +234,6 @@ def arial_font():
     sum_label.config(font=("Arial", 9))
     calculate_button.config(font=("Arial", 9))
     clear_button.config(font=("Arial", 9))
-
-
     
 def century_gothic():
     first_term_entry.config(font=("Century Gothic", 9))
@@ -319,6 +317,23 @@ def reset_scaling():
     clear_button.config(font=(font_name , font_size))
     clear_button.place(x=230, y=160)
 
+    if font_name in ["Century Gothic"]:
+        common_difference_label.place(x=55, y=100)
+    
+    elif font_name in ["Comic Sans MS"]:
+        common_difference_label.place(x=70, y=100)
+        num_terms_label.place(x=115, y=125)
+
+    elif font_name in ["Georgia"]:
+        first_term_label.place(x=140, y=75)
+        common_difference_label.place(x=53, y=100)
+        num_terms_label.place(x=100, y=125)
+
+    elif font_name in ["Elephant"]:
+        first_term_label.place(x=140, y=75)
+        common_difference_label.place(x=50, y=100)
+        num_terms_label.place(x=100, y=125)
+
 def scaling_150():
     global font_size
     font_size = default_font_size * 2
@@ -372,13 +387,32 @@ def scaling_150():
         num_terms_entry.place(x=330, y=130)
 
         first_term_label.place(x=200, y=60)
-        common_difference_label.place(x=120, y=100)
-        num_terms_label.place(x=117, y=120)
+        common_difference_label.place(x=30, y=90)
+        num_terms_label.place(x=123, y=120)
 
         arithmetic_button.place(x=70, y=170)
         geometric_button.place(x=70, y=205)
         clear_button.place(x=310, y=180)
         calculate_button.place(x=400, y=180)
+    
+    elif font_name in ["Georgia"]:
+        first_term_label.place(x=175, y=60)
+        common_difference_label.place(x=5, y=90)
+        num_terms_label.place(x=100, y=120)
+
+    elif font_name in ["Elephant"]:
+        first_term_entry.place(x=370, y=70)
+        common_difference_entry.place(x=370, y=100)
+        num_terms_entry.place(x=370, y=130)
+
+        first_term_label.place(x=220, y=60)
+        common_difference_label.place(x=33, y=90)
+        num_terms_label.place(x=140, y=120)
+
+        arithmetic_button.place(x=70, y=170)
+        geometric_button.place(x=70, y=205)
+        calculate_button.place(x=430, y=180)
+        clear_button.place(x=330, y=180)
 
 
 
@@ -391,7 +425,6 @@ def update_font():
         reset_scaling()
     elif scaling_factor == 1.5:
         scaling_150()
-
 
 def change_font(new_font_name):
     global font_name
@@ -472,6 +505,8 @@ my_menu.add_cascade(label="Fonts", menu=fonts_menu)
 fonts_menu.add_command(label="Arial", command=lambda: change_font("Arial"))
 fonts_menu.add_command(label="Century Gothic", command=lambda: change_font("Century Gothic"))
 fonts_menu.add_command(label="Comic Sans MS", command=lambda: change_font("Comic Sans MS"))
+fonts_menu.add_command(label="Georgia", command=lambda: change_font("Georgia"))
+fonts_menu.add_command(label="Elephant", command=lambda: change_font("Elephant"))
 
 scaling_menu = Menu(my_menu)
 my_menu.add_cascade(label="Scaling", menu= scaling_menu)
