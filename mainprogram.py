@@ -23,20 +23,22 @@ def calculate_sum():
         common_difference = float(common_difference_entry.get())
         num_terms = int(num_terms_entry.get())
 
+         # Check if any of the inputs are negative
+        if first_term < 1 or common_difference < 1 or num_terms < 1:
+            show_error("Input cannot be a negative number or zero!")
+            return
+
         if var.get() == 1: 
         # arithmetic series calculations, if series button is pressed
             sum_series = (num_terms/2) * (2 * first_term + (num_terms - 1) * common_difference)
         else:
-         if common_difference == 1:
-             show_error("Common Ratio cannot be 1 for Geometric Series")
-             return
         # geometric series calculations, if option 2 of series button is pressed
-         sum_series = (first_term*(1-common_difference**num_terms) / (1-common_difference))
-        #If num_terms is less than or equal to 0, do not print anything to the sum_label
-        if num_terms <= 0:
-            sum_label.config(text="Sum: ")
-            show_error("Num of Terms cannot be 0 or a negative number!")
-        else:
+            if common_difference == 1:
+             sum_label.config(text="Sum: ")
+             show_error("Common Ratio cannot be 1 for Geometric Series")
+             return 
+            sum_series = (first_term*(1-common_difference**num_terms) / (1-common_difference))
+        
             #Displaying sum of chosen series, attached onto label
             sum_label.config(text="Sum: " + str(sum_series))
         if var.get() not in [1, 2]:
@@ -51,6 +53,7 @@ def calculate_sum():
 #Calculating an error message if an invalid input is entered
 def show_error(message=""):
     error_label.config(text=message)
+    sum_label.config(text="Sum: ")
 
     if message: # 3000 being 3 seconds, timing for the error before dissapearing
         root.after(3000, show_error)
