@@ -29,11 +29,16 @@ def calculate_sum():
         else:
             #geometric series calculations, if option 2 of series button is pressed
             sum_series = (first_term*(1-common_difference**num_terms) / (1-common_difference))
-        #Displaying sum of chosen series, attached onto label
-        sum_label.config(text="Sum: " + str(sum_series))
+        #If num_terms is less than or equal to 0, do not print anything to the sum_label
+        if num_terms <= 0:
+            sum_label.config(text="Sum: ")
+            show_error("Num of Terms cannot be 0 or a negative number!")
+        else:
+            #Displaying sum of chosen series, attached onto label
+            sum_label.config(text="Sum: " + str(sum_series))
     #When a non integer is entered into entry fields  
     except ValueError:
-        show_error("Invalid input! Please enter a valid number")
+        show_error("Invalid input! Please enter a valid number!")
 
 #Calculating an error message if an invalid input is entered
 def show_error(message=""):
