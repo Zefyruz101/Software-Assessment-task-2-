@@ -27,12 +27,11 @@ def calculate_sum():
         # arithmetic series calculations, if series button is pressed
             sum_series = (num_terms/2) * (2 * first_term + (num_terms - 1) * common_difference)
         else:
+         if common_difference == 1:
+             show_error("Common Ratio cannot be 1 for Geometric Series")
+             return
         # geometric series calculations, if option 2 of series button is pressed
          sum_series = (first_term*(1-common_difference**num_terms) / (1-common_difference))
-        if common_difference == 1:
-            error_label.place(x=100, y=250)
-            show_error("Common difference cannot be 1 for a geometric series!")
-            return
         #If num_terms is less than or equal to 0, do not print anything to the sum_label
         if num_terms <= 0:
             sum_label.config(text="Sum: ")
