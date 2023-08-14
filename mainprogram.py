@@ -24,17 +24,26 @@ def calculate_sum():
         num_terms = int(num_terms_entry.get())
 
         if var.get() == 1: 
-            #arithmetic series calculations, if series button is pressed
+        # arithmetic series calculations, if series button is pressed
             sum_series = (num_terms/2) * (2 * first_term + (num_terms - 1) * common_difference)
         else:
-            #geometric series calculations, if option 2 of series button is pressed
-            sum_series = (first_term*(1-common_difference**num_terms) / (1-common_difference))
+        # geometric series calculations, if option 2 of series button is pressed
+         sum_series = (first_term*(1-common_difference**num_terms) / (1-common_difference))
+        if common_difference == 1:
+            error_label.place(x=100, y=250)
+            show_error("Common difference cannot be 1 for a geometric series!")
+            return
         #If num_terms is less than or equal to 0, do not print anything to the sum_label
         if num_terms <= 0:
             sum_label.config(text="Sum: ")
             show_error("Num of Terms cannot be 0 or a negative number!")
         else:
             #Displaying sum of chosen series, attached onto label
+            sum_label.config(text="Sum: " + str(sum_series))
+        if var.get() not in [1, 2]:
+            sum_label.config(text="Sum: ")
+            show_error("Please select a calculation type!")
+        else:
             sum_label.config(text="Sum: " + str(sum_series))
     #When a non integer is entered into entry fields  
     except ValueError:
